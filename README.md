@@ -1,5 +1,7 @@
 # MeowCacheCleaner — умная очистка кэша и временных файлов для Windows
 
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fmatvey2222222222%2FMeowCacheCleaner&label=%20Просмотры&countColor=%23263759&style=flat-square)
+
 Со временем временные и кэшированные файлы занимают много места и могут замедлять работу программ. MeowCacheCleaner не удаляет всё подряд: сначала он сканирует диск, показывает, что найдено, и только потом ты решаешь, что очистить.
 
 ## Главная особенность: сначала сканирование, потом очистка
