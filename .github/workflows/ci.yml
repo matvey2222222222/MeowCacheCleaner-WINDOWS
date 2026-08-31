@@ -1,0 +1,24 @@
+name: PR Checks + Assign Reviewer
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci
+      - run: npm test   # твоя проверка (линтер/тесты)
+
+      - name: Назначить matvey2222222222 ревьюером
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo, number } = context.issue;
+            await github.rest.pulls.requestReviewers({
+              owner, repo, pull_number: number,
+              reviewers: ['matvey2222222222']
+            });
